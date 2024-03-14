@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Inventory App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav-list">
+          <div>
+            <li class="nav-item">
+              <a href="{% url 'product_list' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'product_create' %}" class="nav-link"
+                >Add Item</a
+              >
+            </li>
+          </div>
+          <!-- <li class="nav-item"><a href="{% url 'product_create' %}" class="nav-link add-product">Add Product</a></li> -->
+          <div class="lastdiv">
+            {% if user.is_authenticated %}
+            <!-- If user is logged in, display logout and username -->
+            <li class="nav-item">
+              <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link" style="background: none; border: none; cursor: pointer;">Logout</button>
+              </form>
+          </li>
+          
+            <li class="nav-item">
+              <span class="welcome-text">Hi!, {{ user.username }}</span>
+            </li>
+            {% else %}
+            <!-- If user is not logged in, display login -->
+            <li class="nav-item">
+              <a href="{% url 'login' %}" class="nav-link">Login</a>
+            </li>
+            {% endif %}
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      {% block content %}
+      <!-- This is a placeholder for the content of individual pages -->
+      {% endblock %}
+    </main>
+
+    <footer class="footer">
+      <!-- Footer content goes here -->
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Add more JavaScript files if needed -->
+  </body>
+</html>

@@ -1,0 +1,196 @@
+/* style.css */
+
+/* Header styles */
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  background-color: #007bff;
+}
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 10px;
+  height: 80px;
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+  height: inherit;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+.add-product {
+  background-color: #007bff;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.welcome-text {
+  margin-right: 20px; /* Add margin between welcome text and logout */
+}
+.lastdiv {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 30px;
+}
+
+
+
+/* style.css */
+
+/* Styles for the form */
+.form-div {
+  background-color: #007bff;
+  padding: 3%;
+  height: 74vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-container {
+  width: 500px;
+  padding: 2%;
+  background-color: #007bff;
+  box-shadow: -6px 5px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -6px 5px 9px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -6px 5px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.form-field {
+  margin-bottom: 10px;
+  padding: 2%;
+  width: 90%;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input[type="text"],
+.form-field textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-field textarea {
+  height: 100px; /* Adjust height as needed */
+}
+
+.form-submit button {
+  padding: 8px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* style.css */
+
+/* Styles for the navigation */
+.nav-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .add-product {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Styles for the product list */
+  .items-div{
+    background-color: #007bff;
+    height: 100vh;
+  }
+  .product-list {
+    list-style-type: none;
+    padding: 30px;
+    background-color: #007bff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .product-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 600px;
+  }
+  
+  .product-list li strong {
+    color: #555;
+  }
+  
+  .edit-link,
+  .delete-link {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .edit-link:hover,
+  .delete-link:hover {
+    text-decoration: underline;
+  }
+  
+
+  /* Make navigation links and welcome text stack vertically on small screens */
+@media screen and (max-width: 768px) {
+    .nav-list {
+      justify-content: space-between;
+    }
+  
+    .nav-item,
+    .welcome-text {
+      margin-right: 0;
+      margin-bottom: 10px; /* Add margin between items on small screens */
+    }
+  
+    .form-container {
+      width: 300px;
+    }
+    .product-list li {
+        
+        width: 300px;
+      }
+  }
+  

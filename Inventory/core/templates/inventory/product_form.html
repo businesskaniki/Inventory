@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if form.instance.pk %}
+        Edit Product
+    {% else %}
+        Add Product
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Edit Product{% else %}Add Product{% endif %}</h1>
+    <form method="post" class="form-container">
+        {% csrf_token %}
+        <div class="form-field">{{ form.name.label_tag }} {{ form.name }}</div>
+        <div class="form-field">{{ form.description.label_tag }} {{ form.description }}</div>
+        <div class="form-field">{{ form.dispatched.label_tag }} {{ form.dispatched }}</div>
+        <div class="form-field">{{ form.added.label_tag }} {{ form.added }}</div>
+        <div class="form-submit">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+{% endblock %}

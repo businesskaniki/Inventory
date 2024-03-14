@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<!-- Extend from the base template -->
+
+{% block title %} My Items {% endblock %}
+
+{% block content %}
+
+<ul class="product-list">
+  {% for product in products %}
+  <li>
+    <strong>Item:</strong> {{ product.name }}<br />
+    <strong>Description:</strong> {{ product.description }}<br />
+    <strong>In Stock:</strong> {% if product.in_stock %} Yes {% else %} No {% endif %}<br />
+    <strong>Dispatched:</strong> {{ product.dispatched }}<br />
+    <strong>Added:</strong> {{ product.added }}<br />
+    <strong>Remaining:</strong> {{ product.remaining }}<br />
+    <strong>Date Added:</strong> {{ product.date_added }}<br />
+    <!-- Add links to edit and delete each product -->
+    <a href="{% url 'product_update' product.pk %}" class="edit-link">Edit</a>
+    <a href="{% url 'product_delete' product.pk %}" class="delete-link">Delete</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
